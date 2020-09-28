@@ -1,0 +1,12 @@
+<div class="article">
+  <h3>{{ article.title }}</h3>
+  <img [src]="article.urlToImage">
+  <p [innerHTML]="!article.content ? article.description : article.content"></p>
+  <div class="article__author">
+    <span>Author: </span>
+    <span><strong>{{ article.author }}</strong></span>
+  </div>
+  <div class="article__actions">
+    <button class="link" (click)="goBack()">< Back</button>
+  </div>
+</div>

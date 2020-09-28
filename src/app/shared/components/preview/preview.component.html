@@ -1,0 +1,10 @@
+<h2 class="title">Top news from {{ (filterState.countryObs | async).fullName }}</h2>
+<h2 *ngIf="!!stateService.selectedCategory" class="title">Category: <i>{{ stateService.selectedCategory }}</i></h2>
+<div class="card-list">
+  <app-card class="card-item" *ngFor="let article of articles; let i = index; let last = last;" [ngClass]="{'end-row': (i + 1) % 3 === 0, 'last-card': last}">
+    <h4>{{ article.title }}</h4>
+    <img [src]="article.urlToImage">
+    <span [innerHTML]="article.description"></span>
+    <button class="link" (click)="selectArticle(article)">More ></button>
+  </app-card>
+</div>

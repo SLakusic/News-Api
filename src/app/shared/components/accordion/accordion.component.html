@@ -1,0 +1,8 @@
+<div class="accordion__header" app-accordion-expander>
+  <strong>
+    <ng-content select="[appAccordionHeader]"></ng-content>
+  </strong>
+</div>
+<div class="accordion__body" *ngIf="expanded">
+  <ng-content></ng-content>
+</div>

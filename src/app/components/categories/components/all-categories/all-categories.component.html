@@ -1,0 +1,39 @@
+<div class="category-container">
+  <app-accordion class="category-content" *ngFor="let category of categoryList;let idx = index">
+    <a appAccordionHeader class="category__title" [routerLink]="[ '/category', category ]"
+      (click)="changeCategory(category)">{{ category }}</a>
+    <div class="category__body">
+      <!-- TODO: Create animation directive with counter -->
+      <div class="animated-container" [@animationSlider]="counters[idx]">
+        <ng-container
+          *ngFor="let item of stateService[category + 'CategoryObs'] | async; let i = index; let last = last; let first = first">
+          <div class="animated-item" *ngIf="counters[idx] === i">
+            <div class="animated-title">
+              <span>{{ item.title }}</span>
+              <img [src]="item.urlToImage">
+            </div>
+            <div class="animated-description">
+              <p>{{ item.description }}</p>
+            </div>
+            <div class="animated-actions">
+              <button class="link" (click)="selectArticle(item)">More ></button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+      <!-- Use svg sprite for svg icons -->
+      <button class="link icon slider-action left" *ngIf="counters[idx] !== 0" (click)="decrementCounter(idx)">
+        <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+          viewBox="0 0 256 256">
+          <polygon points="207.093,30.187 176.907,0 48.907,128 176.907,256 207.093,225.813 109.28,128" />
+        </svg>
+      </button>
+      <button class="link slider-action right" *ngIf="counters[idx] + 1 < (stateService[category + 'CategoryObs'] | async).length" (click)="incrementCounter(idx)">
+        <svg class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 256 256">
+          <polygon points="79.093,0 48.907,30.187 146.72,128 48.907,225.813 79.093,256 207.093,128" />
+        </svg>
+      </button>
+    </div>
+  </app-accordion>
+</div>

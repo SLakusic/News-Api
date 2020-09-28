@@ -1,0 +1,21 @@
+.article {
+  display: flex;
+  flex-direction: column;
+
+  & img {
+    width: 100%;
+  }
+
+  &__author {
+    display: flex;
+    justify-content: flex-end;
+    margin: 20px 0;
+    & > *:first-child {
+      margin-right: 10px;
+    }
+  }
+
+  &__actions {
+    margin-bottom: 20px;
+  }
+}

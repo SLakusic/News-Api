@@ -1,0 +1,30 @@
+@import "../../../../assets/styles/variables";
+
+:host {
+  display: flex;
+}
+
+.card {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  border: $main-border;
+  border-radius: 15px;
+  padding: 13px 42px 12px 18px;
+  
+  &__image {
+    width: 100%;
+    height: auto;
+    margin: 10px 0;
+  }
+
+  &__description {
+    flex-grow: 1;
+    margin-bottom: 10px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: flex-end;
+  }
+}

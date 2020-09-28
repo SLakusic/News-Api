@@ -1,0 +1,12 @@
+<div class="card">
+  <ng-content select="h2, h3, h4"></ng-content>
+  <div class="card__image">
+    <ng-content select="img"></ng-content>
+  </div>
+  <div class="card__description">
+    <ng-content select="span, paragraph"></ng-content>
+  </div>
+  <div class="card__actions">
+    <ng-content></ng-content>
+  </div>
+</div>

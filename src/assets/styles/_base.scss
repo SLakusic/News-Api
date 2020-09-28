@@ -1,0 +1,33 @@
+/* Imports */
+@import "./variables";
+
+/* Global styles */
+html {
+
+}
+
+body {
+  font-family: $text-font;
+  margin: 0px;
+  width: 100vw;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  * {
+    box-sizing: border-box;
+  }
+  input:focus,
+  input:active,
+  input:hover {
+    outline: none;
+  }
+  input {
+    font-family: $text-font;
+    color: inherit;
+  }
+}
+
+input::-ms-clear {
+  display: none;
+}

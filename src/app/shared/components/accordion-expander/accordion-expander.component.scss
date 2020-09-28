@@ -1,0 +1,33 @@
+@import '../../../../assets/styles/variables';
+
+:host {
+  display: flex;
+  justify-content: space-between;
+
+  &.expand {
+    button {
+      &.expanded {
+        display: none;
+      }
+    
+      &.colapsed {
+        display: block;
+      }
+    }
+  }
+}
+
+.icon {
+  fill: $text-color;
+  width: 16px;
+}
+
+button {
+  &.expanded {
+    display: block;
+  }
+
+  &.colapsed {
+    display: none;
+  }
+}

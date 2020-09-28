@@ -1,0 +1,107 @@
+@import "../../../assets/styles/variables";
+
+.navigation {
+  display: flex;
+  align-items: stretch;
+  list-style: none;
+  height: 56px;
+  font-size: 18px;
+  color: $text-color;
+  margin: 0;
+  padding: 0;
+  border-bottom: $main-border;
+
+  &__tab {
+    width: 140px;
+  }
+
+  &__search {
+    flex: 1;
+    padding: 0 5px;
+    cursor: default;
+
+    & > input {
+      width: 100%;
+      line-height: 35px;
+      border: none;
+      outline: none;
+    }
+
+    .search-icon {
+      display: none;
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      margin: 0 5px;
+    }
+  }
+
+  &__language {
+    width: 60px;
+  }
+}
+
+li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  border-right: $main-border;
+  cursor: pointer;
+  user-select: none;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:last-child {
+    border-right: none;
+  }
+
+  &.selected {
+    background-color: $background-color;
+    color: $text-color-contrast;
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+  }
+}
+
+@media (max-width: 800px) {
+  .navigation__tab {
+    width: 100px;
+  }
+}
+
+@media (max-width: 600px) {
+  .navigation__tab.search {
+    display: none;
+  }
+
+  .navigation__search .search-icon {
+    display: inline;
+  } 
+}
+
+@media (max-width: 500px) {
+  .navigation{
+    height: auto;
+    flex-wrap: wrap;
+
+    &__tab {
+      width: 50%;
+    }
+
+    &__search {
+      width: 100%;
+      flex: 0 0 100%;
+      border-right: 0;
+      border-top: $main-border;
+      border-bottom: $main-border;
+    }
+    &__language {
+      width: 50%;
+    }
+  } 
+}

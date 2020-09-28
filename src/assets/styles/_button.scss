@@ -1,0 +1,22 @@
+@import './variables';
+
+button {
+  &.link {
+    border: none;
+    background-color: unset;
+    color: $text-color;
+    font-weight: 400;
+    font-size: 18px;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      color: darken($text-color, 50%);
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+  }
+}

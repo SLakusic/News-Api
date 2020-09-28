@@ -1,0 +1,22 @@
+@import "../assets/styles/variables";
+
+.app-container {
+  display: flex;
+  min-height: 50%;
+  flex-direction: column;
+  max-width: 90%;
+  margin: 50px auto;
+  border: $main-border;
+}
+
+.app-content {
+  padding: 20px 63px 5px;
+  color: $text-color;
+  font-weight: 400;
+}
+
+@media (max-width: 700px) {
+  .app-content {
+    padding: 10px 20px 5px;
+  }
+}
